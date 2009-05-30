@@ -1,0 +1,91 @@
+body {
+	color			: #000033;
+	background		: #ffffff;
+	padding			: 1em 5em;
+	margin			: 0em;
+}
+div {
+	padding			: 0em;
+	margin			: 0em;
+}
+h1 {
+	margin			: 0em 0em 1.5em 0em;
+	padding			: 0.2em 0.5em 0.2em 0.5em;
+	border-bottom	: 4px #ccccff ridge;
+	color			: #0000ff;
+	background		: #ffffff;
+}
+h2 {
+	clear			: both;
+	font-size		: 1.2em;
+	font-weight		: bold;
+	color			: #000066;
+	background		: #ccccff;
+	padding			: 0em 0em 0em 0.5em;
+	margin			: 0.5em 0em 0.5em 0em;
+}
+address {
+	margin			: 0.5em 0em 0em 0em;
+	text-align		: right;
+}
+p {
+	margin			: 0em;
+}
+img {
+	border			: 1px solid #000000;
+	vertical-align		: top;
+}
+img.nepal {
+	border			: 0px solid #000000;
+}
+applet {
+	border			: 0px solid #000000;
+	padding			: 0em;
+	margin			: 0em;
+}
+div#main {
+	position		: relative;
+}
+div#applet {
+	position		: absolute;
+	left			: 0px;
+	top			: 0px;
+	width			: 448px;
+}
+div#ranking {
+	margin-left		: 376px;
+}
+span.score {
+	font-size		: smaller;
+}
+table {
+	cell-spacing		: 0;
+	border-collapse		: collapse;
+	margin-left		: 3em;
+}
+tr {
+	margin			: 0em;
+	padding			: 0em;
+}
+td {
+	padding			: 1em 0.5em 1em 0em;
+	margin			: 0em;
+}
+td.even {
+	background		: #ccccff;
+}
+td.odd {
+	background		: #ffffff;
+}
+td.flag {
+	padding-left		: 1em;
+	text-align		: center;
+}
+td.title {
+	padding-left		: 0.5em;
+	text-align		: left;
+}
+p#to_appear {
+	margin			: 3em;
+	height			: 248px;
+}

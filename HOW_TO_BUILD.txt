@@ -1,0 +1,39 @@
+* How to build:
+
+- set envirionment variables
+
+    $ export JAVA_HOME=...
+    $ export SCALA_HOME=...
+
+- build jar
+
+    $ mkdir classes
+    $ scalac -d classes -classpath $JAVA_HOME/jre/lib/plugin.jar src/*
+    $ jar cvf flagir.jar -C classes .
+
+- download flag data from wikipedia and wikimedia commons
+
+    $ mkdir svg png thumb
+    $ ruby19 tools/get_flag_data.rb > entries.txt
+
+- build feature data
+
+    $ scala -classpath flagir.jar Builder png/* > features.txt
+    $ ruby19 tools/gen_feature_data.rb entries.txt features.txt > features.dat
+    $ mv features.dat classes
+
+- build applet jar
+
+    $ jar cvfM flagir.jar -C classes .
+    $ java -jar proguard.jar \
+       -injars flagir.jar:$SCALA_HOME/lib/scala-library.jar \
+       -outjars flagir-mini.jar \
+       -libraryjars $JAVA_HOME/jre/lib/rt.jar:$JAVA_HOME/jre/lib/plugin.jar \
+       -keep public class Main \
+       -dontusemixedcaseclassnames \
+       -dontoptimize \
+       -dontwarn
+
+- publish
+
+    $ mv flagir-mini.jar thumb public
